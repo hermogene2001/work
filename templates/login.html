@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infocus Studio Ltd - Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+      .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form method="POST" id="loginForm">
+            <div class="form-group">
+                <label for="email">Name:</label>
+                <input type="text" id="name" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Pin:</label>
+                <input type="password" id="password" name="pin" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+            // Perform client-side validation
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('password').value;
+
+            if (name.trim() === '' || password.trim() === '') {
+                alert('Email and password are required.');
+                event.preventDefault();
+            } else if (!validateName(email)) {
+                alert('Please enter a valid Name.');
+                event.preventDefault();
+            }
+        });
+
+        function validateEmail(email) {
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(name);
+        }
+    </script>
+</body>
+</html>

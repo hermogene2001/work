@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infocus Studio Ltd - Register</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+       .container {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Register</h1>
+        <form method="POST" id="registerForm">
+            <div class="form-group">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="names" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="name">Phone Number:</label>
+                <input type="text" id="name" name="phone" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Account Number:</label>
+                <input type="number" id="email" name="acc" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Bank Name</label>
+                <input type="text" id="phone" name="bank" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Pin</label>
+                <input type="Pin" id="phone" name="pin" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+        </form>
+    </div>
+
+</div>
+    <script>
+        document.getElementById('registerForm').addEventListener('submit', function(event) {
+            // Perform client-side validation
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+
+            if (name.trim() === '' || email.trim() === '' || phone.trim() === '') {
+                alert('All fields are required.');
+                event.preventDefault();
+            } else if (!validatePin(pin)) {
+                alert('Please enter a valid pin address.');
+                event.preventDefault();
+            } else if (!validatePhone(phone)) {
+                alert('Please enter a valid phone number.');
+                event.preventDefault();
+            }
+        });
+
+        function validateEmail(email) {
+            var regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return regex.test(email);
+        }
+
+        function validatePhone(phone) {
+            var regex = /^\d{10}$/;
+            return regex.test(phone);
+        }
+    </script>
+</body>
+</html>

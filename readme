@@ -1,0 +1,63 @@
+# Infocus Studio Ltd - Photography and Videography Application
+
+This is a web application developed using Flask and MySQL to provide photography and videography services to clients. The application allows clients to register, request and order photography/videography services, pay for the services, receive confirmation messages, access their pictures easily, and log in/out of the system.
+
+## Features
+
+- **Client Registration**: Clients can register with their name, email, and password.
+- **Service Ordering**: Clients can request and order photography/videography services.
+- **Payment**: Integration with a payment gateway for clients to pay for the services.
+- **Confirmation Messages**: Clients receive confirmation messages after successful registration, order placement, and payment.
+- **Picture Access**: Clients can easily access their pictures through the application.
+- **Login/Logout**: Secure login and logout functionality for clients to access their accounts.
+
+## Technologies Used
+
+- Flask: Python web framework for backend development.
+- MySQL: Relational database management system for storing client and order data.
+- Bootstrap: Frontend framework for responsive and mobile-first web development.
+- bcrypt: Library for securely hashing passwords.
+- Flask-MySQLDB: Flask extension for MySQL database integration.
+
+## Setup Instructions
+
+1. Clone the repository:
+ git clone https://github.com/hermogene2001/work.git
+2. Install dependencies:
+
+pip install -r requirements.txt
+
+2. Install dependencies:
+
+pip install -r requirements.txt
+
+
+3. Set up MySQL database:
+
+   - Create a new MySQL database named `infocus`.
+   - Execute the SQL statements in `database.sql` to create the necessary tables.
+
+4. Update Flask configuration in `app.py`:
+
+   - Update the MySQL configurations (host, user, password, etc.) to match your MySQL setup.
+
+5. Run the application:
+
+python app.py
+
+6. Access the application in your web browser:
+
+http://localhost:5000
+
+## File Structure
+
+- `app.py`: Main Flask application file containing routes and configurations.
+- `templates/`: Folder containing HTML templates.
+- `static/`: Folder containing static files such as CSS, JavaScript, and images.
+- `requirements.txt`: File containing Python dependencies.
+
+Contributions are welcome! If you have any suggestions or find any issues, please feel free to open an issue or create a pull request.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for details.

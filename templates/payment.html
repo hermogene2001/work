@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+section {
+    padding: 20px;
+}
+
+section h2 {
+    margin-top: 0;
+}
+
+form label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+form select,
+form input[type="date"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.service {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.service h3 {
+    margin-top: 0;
+}
+
+.service button {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Your Dashboard</h1>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('dashboard') }}">Order</a></li>
+                <li><a href="{{ url_for('payment') }}">Pay Services</a></li>
+                <li><a href="{{ url_for('logout') }}">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="pay">
+        <h2>Pay Services</h2>
+        {% for payment in payment %}
+                <tr>
+                    <td>{{ payment.id }}</td>
+                    <td>{{ payment.name }}</td>
+                    <td>{{ payment.amaunt }}</td>
+                </tr>
+                {% endfor %}
+        {% for payment_item in payment %}
+        
+        <div class="service">
+            <p>ServiceType: {{ payment_item.name }}</p>
+            <p>Price for Service: {{ payment_item.amaunt }}</p>
+            
+            <a class="btn bg-primary" href=" {{ url_for('process_payment') }}">Make Payment</a>
+        </div>
+        {% endfor %}
+    </section>
+</body>
+</html>
